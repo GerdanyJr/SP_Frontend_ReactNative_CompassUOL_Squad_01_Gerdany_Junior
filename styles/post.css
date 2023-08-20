@@ -1,0 +1,445 @@
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    max-width: 100%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.0256);
+}
+
+header>a img {
+    height: 30px;
+}
+
+nav>ul {
+    list-style: none;
+    gap: 1em;
+    display: flex;
+}
+
+#nav_bar>ul li img {
+    height: 0.8em;
+}
+
+/* Post header styles */
+
+#post_header {
+    margin: 2em auto;
+    text-align: center;
+    width: 40%;
+}
+
+#post_header>h1 {
+    font-size: 2.5em;
+}
+
+#post_header>h2 {
+    font-size: 1.1em;
+    font-weight: normal;
+    width: 70%;
+    margin: 1em auto;
+}
+
+#main_img_container>img {
+    margin: 2em auto;
+    width: 100%;
+}
+
+article {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container {
+    border-top: 2px solid #000;
+    width: 100%;
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#user_data {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.user_img {
+    width: 20%;
+    border-radius: 180px;
+}
+
+#user_info {
+    font-size: 0.8em;
+    line-height: 1.6em;
+}
+
+#share {
+    display: flex;
+    padding: 5px;
+}
+
+#share>button {
+    background-color: inherit;
+    cursor: pointer;
+    padding: 5px 20px;
+    border: 2px solid #EAEAEA;
+}
+
+#share>button ion-icon {
+    font-size: 30px;
+}
+
+#share>button:nth-child(3) {
+    display: none;
+}
+
+/* Text area */
+
+.text_area {
+    width: 100%;
+}
+
+.text_area>p,
+.text_area>h1 {
+    font-size: 1.4em;
+    line-height: 130%;
+    margin: 2em 0;
+}
+
+.text_area>ul {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.text_area li {
+    font-size: 1.4em;
+    margin: 1em 0;
+}
+
+figure {
+    text-align: center;
+}
+
+figure>figcaption {
+    width: 30%;
+    margin: 0 auto;
+}
+
+figure>img {
+    width: 100vw;
+}
+
+#share_on {
+    display: flex;
+    width: 100%;
+}
+
+#share_on>button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: inherit;
+    border: 1px solid #EAEAEA;
+    cursor: pointer;
+}
+
+#share_on ion-icon {
+    font-size: 25px;
+    padding: 10px;
+}
+
+#share_on>button:nth-child(3) {
+    display: none;
+}
+
+#tags {
+    margin: 1.5em 0;
+    align-self: flex-start;
+}
+
+#tags span {
+    text-decoration: underline;
+}
+
+#author_info {
+    margin: 0 auto;
+    border-top: 1px dotted #000000;
+    padding-top: 1em;
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+    gap: 10px;
+}
+
+#author_info span {
+    font-weight: bold;
+}
+
+/* Partition styles */
+
+#partition {
+    border-top: 2px solid black;
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+}
+
+#partition img {
+    margin-top: -2em;
+}
+
+/* next articles section styles */
+
+#next_articles {
+    width: 70%;
+    margin: 2em auto;
+    text-align: center;
+}
+
+#next_articles h1 {
+    font-size: 2em;
+    margin: 1em;
+}
+
+#articles>article {
+    width: 100%;
+}
+
+#articles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+}
+
+#articles p {
+    font-size: 1.3em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#articles img {
+    width: 100%;
+    height: clamp(150px,200px,300px);
+}
+
+/* Comments styles */
+
+#comments_form fieldset {
+    border: none;
+}
+
+#comments_form legend {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#comments_form p {
+    margin: 1em 0;
+}
+
+#comments_form input {
+    padding: 0.5em;
+}
+
+#comments_form label {
+    display: block;
+}
+
+#comments_form button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #428BCA;
+    color: #ffff;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: all 0.25s ease-in-out;
+    width: 20%;
+}
+
+#comments_form button:hover {
+    background-color: #155799;
+    border-color: #155799;
+    color: #F1F2F2;
+}
+
+#comments_form button:active {
+    padding: 0.4em;
+    transition: padding 0.1s ease-in-out, transform 0.1s ease-in-out;
+    transform: scale(0.95);
+}
+
+#comments {
+    width: 50%;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#comments>h1 {
+    font-size: 2em;
+    margin: 1em 0;
+}
+
+#comments div {
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+    box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
+    font-size: 1.1em;
+}
+
+/* Sign up box styles */
+#sign_up {
+    width: 50%;
+    margin: 5em auto;
+    border: 1px solid #EAEAEA;
+    border-top: 7px solid #000000;
+    text-align: center;
+    padding: 2em 4em;
+
+}
+
+#sign_up_text {
+    font-size: 1.2em;
+    margin: 1em auto;
+}
+
+#sign_up_text>h1 {
+    margin: 5px;
+}
+
+#sign_up form {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+#sign_up input {
+    width: 100%;
+    padding: 1em
+}
+
+#sign_up button {
+    width: 30%;
+    padding: 1em;
+    margin: 0 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    font-weight: 600;
+    color: #ffff;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+footer>p {
+    width: 15%;
+}
+
+#footer_text {
+    width: 30%;
+}
+
+#footer_text h1 {
+    padding: 0.5em;
+}
+
+#footer_links {
+    display: flex;
+    gap: 2em;
+    margin: 2em 0;
+}
+
+#footer_links>a {
+    border-bottom: 1px solid #FFFF;
+}
+
+@media screen and (max-width: 768px) {
+    #comments {
+        width: 90%;
+    }
+
+    #post_header {
+        width: 90%;
+    }
+
+    article {
+        width: 90%;
+    }
+
+    #articles {
+        grid-template-columns: 1fr;
+        font-size: 1.5em;
+    }
+
+    figure>figcaption {
+        width: 90%;
+        font-size: 1.3em;
+    }
+
+    #share>button:nth-child(3),
+    #share_on>button:nth-child(3) {
+        display: block;
+    }
+
+    #share>button,
+    #share_on>button {
+        font-size: 0;
+    }
+
+    #sign_up {
+        width: 100%;
+        border-top: 7px solid #000000;
+        border-bottom: 2px solid #000000;
+    }
+
+    #footer_text {
+        width: 40%;
+    }
+
+    footer>p {
+        width: 30%;
+    }
+}
+
+/* Util classes */
+
+.active {
+    border-bottom: 2px solid #000000;
+    margin-bottom: -2.6em;
+}
