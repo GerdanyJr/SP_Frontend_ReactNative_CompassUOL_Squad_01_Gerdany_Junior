@@ -101,7 +101,7 @@ async function renderSinglePost(postId: string, userId: number) {
 }
 
 function renderNextPosts(nextPosts: Post[], nextPostsContainer: HTMLDivElement) {
-    nextPosts.map(post => {
+    nextPosts.filter(post => !post.isDeleted).map(post => {
         const article = document.createElement('article');
         const postLink = document.createElement('a');
         const postImg = document.createElement('img');
