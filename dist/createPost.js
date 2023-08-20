@@ -19,6 +19,7 @@ form.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 0, fun
     const content = contentInput.value;
     const response = yield createPost({ title: title, body: content });
     const img = yield genericFetch('https://dog.ceo/api/breeds/image/random');
+    const comments = yield genericFetch(`https://dummyjson.com/posts/${Math.ceil(Math.random() * 100)}/comments`);
     const newPost = {
         id: response.id,
         userId: response.userId,
@@ -26,7 +27,7 @@ form.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 0, fun
         body: response.body,
         imgUrl: img.message,
         isDeleted: false,
-        comments: [],
+        comments: comments.comments,
         tags: []
     };
     posts.push(newPost);

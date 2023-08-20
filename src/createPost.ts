@@ -14,6 +14,7 @@ form.addEventListener('submit', async (event) => {
 
     const response = await createPost({ title: title, body: content });
     const img = await genericFetch('https://dog.ceo/api/breeds/image/random');
+    const comments = await genericFetch(`https://dummyjson.com/posts/${Math.ceil(Math.random() * 100)}/comments`);
     const newPost: Post = {
         id: response.id,
         userId: response.userId,
@@ -21,7 +22,7 @@ form.addEventListener('submit', async (event) => {
         body: response.body,
         imgUrl: img.message,
         isDeleted: false,
-        comments: [],
+        comments: comments.comments,
         tags: []
     }
     posts.push(newPost);

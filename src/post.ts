@@ -63,9 +63,7 @@ function createComment(comment: Comment, commentsContainer: HTMLDivElement) {
 }
 
 async function renderSinglePost(postId: string, userId: number) {
-    const [commentsJson, user] = await Promise.all([
-        genericFetch(`https://dummyjson.com/posts/${postId}/comments`),
-        genericFetch(`https://dummyjson.com/users/${userId}`)]);
+    const user = await genericFetch(`https://dummyjson.com/users/${userId}`);
     const postHeader = document.querySelector('#post_header')! as HTMLDivElement;
     const postBody = document.querySelector(".text_area")! as HTMLDivElement;
     const user_info = document.querySelector('#user_info')! as HTMLDivElement;
@@ -81,9 +79,11 @@ async function renderSinglePost(postId: string, userId: number) {
     user_img.forEach(imgElem => imgElem.src = user.image);
 
     if (post.comments.length == 0) {
+        const commentsJson = await genericFetch(`https://dummyjson.com/posts/${postId}/comments`)
         post.comments = commentsJson.comments.map((comment: Comment) => { return { body: comment.body, user: { username: comment.user.username } } });
         commentsJson.comments.map((comment: any) => createComment({ body: comment.body, user: { username: comment.user.username } }, commentsContainer));
     } else {
+        console.log(post);
         post.comments.map(((comment: any) => createComment({ body: comment.body, user: { username: comment.user.username } }, commentsContainer)));
     }
     postBody.innerHTML = `
