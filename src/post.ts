@@ -6,13 +6,23 @@ const nextPosts = posts.filter(nextPost => nextPost.id !== post.id);
 const nextPostsContainer = document.querySelector('#articles')! as HTMLDivElement;
 const commentsContainer = document.querySelector('#comments')! as HTMLDivElement;
 const commentFormContainer = document.querySelector('#comments_form')! as HTMLFormElement;
+const deleteButton = document.querySelector("#delete_button")! as HTMLButtonElement;
+
+deleteButton.addEventListener("click", async () => {
+    const response = await fetch(`https://dummyjson.com/posts/${post.id}`, {
+        method: 'DELETE',
+    });
+    const deletedPost = await response.json();
+    updatePostInArrayAndStorage(deletedPost);
+    window.location.href = "index.html";
+})
 
 commentFormContainer.addEventListener('submit', (event) => {
     event.preventDefault();
     const username = document.querySelector('#username')! as HTMLInputElement;
     const body = document.querySelector('#comment')! as HTMLInputElement;
     const comment: Comment = {
-        user:{username: username.value},
+        user: { username: username.value },
         body: body.value
     }
     username.value = '';
@@ -34,7 +44,7 @@ async function postComment(comment: Comment) {
     const commentJson = await response.json();
     const newComment: Comment = {
         body: commentJson.body,
-        user:{username: comment.user.username}
+        user: { username: comment.user.username }
     }
     console.log(post.comments);
     post.comments.push(newComment);
@@ -70,11 +80,11 @@ async function renderSinglePost(postId: string, userId: number) {
     user_name.innerText = `${user.firstName} ${user.lastName}`;
     user_img.forEach(imgElem => imgElem.src = user.image);
 
-    if(post.comments.length == 0) {
-        post.comments = commentsJson.comments.map((comment: Comment) => { return {body: comment.body, user:{username: comment.user.username} }});
-        commentsJson.comments.map((comment: any) => createComment({ body: comment.body, user:{username: comment.user.username} }, commentsContainer));
+    if (post.comments.length == 0) {
+        post.comments = commentsJson.comments.map((comment: Comment) => { return { body: comment.body, user: { username: comment.user.username } } });
+        commentsJson.comments.map((comment: any) => createComment({ body: comment.body, user: { username: comment.user.username } }, commentsContainer));
     } else {
-        post.comments.map(((comment: any) => createComment({ body: comment.body, user:{username: comment.user.username} }, commentsContainer)));
+        post.comments.map(((comment: any) => createComment({ body: comment.body, user: { username: comment.user.username } }, commentsContainer)));
     }
     postBody.innerHTML = `
     <p>${post.body}</p>

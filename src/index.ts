@@ -9,7 +9,8 @@ export interface Post {
     body: string,
     imgUrl: string,
     tags: string[],
-    comments: Comment[]
+    comments: Comment[],
+    isDeleted: boolean
 }
 
 export interface Comment {
@@ -31,7 +32,8 @@ async function loadData(): Promise<any> {
                     body: postsData[i].body,
                     imgUrl: imgsData[i],
                     tags: postsData[i].tags,
-                    comments: []
+                    comments: [],
+                    isDeleted: false
                 })
             }
             return combinedData;
@@ -68,7 +70,7 @@ async function renderPosts(posts?: Post[]) {
     if (posts === null) {
         posts = await loadData();
     }
-    posts!.map((post: Post) => renderPost(post));
+    posts!.filter(post => !post.isDeleted).map((post: Post) => renderPost(post));
     sessionStorage.setItem("posts", JSON.stringify(posts));
 }
 renderPosts(posts);

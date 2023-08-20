@@ -25,7 +25,8 @@ function loadData() {
                     body: postsData[i].body,
                     imgUrl: imgsData[i],
                     tags: postsData[i].tags,
-                    comments: []
+                    comments: [],
+                    isDeleted: false
                 });
             }
             return combinedData;
@@ -63,7 +64,7 @@ function renderPosts(posts) {
         if (posts === null) {
             posts = yield loadData();
         }
-        posts.map((post) => renderPost(post));
+        posts.filter(post => !post.isDeleted).map((post) => renderPost(post));
         sessionStorage.setItem("posts", JSON.stringify(posts));
     });
 }
