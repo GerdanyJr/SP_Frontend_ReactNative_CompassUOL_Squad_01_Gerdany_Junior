@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/post.css">
+
+    <!-- Ionic icons import -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <title>Post</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="assets/header/Logo.svg" alt="Logo do site"></a>
+        <nav id="nav_bar">
+            <ul>
+                <li class="active"><a href=""><img src="assets/header/Blog.svg" alt="Blog"></a></li>
+                <li><a href=""><img src="assets/header/About.svg" alt="About"></a></li>
+                <li><a href=""><img src="assets/header/Links.svg" alt="Links"></a></li>
+                <li><a href=""><img src="assets/header/Projects.svg" alt="Projects"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="post_header">
+            <h1>
+                A few words about this blog platform, Ghost, and how this site was made
+            </h1>
+            <h2>
+                Why Ghost (& Figma) instead of Medium, WordPress or other options?
+            </h2>
+        </div>
+        <div id="main_img_container">
+            <img src="assets/image 2-full .jpg" alt="">
+        </div>
+        <article>
+            <div id="container">
+                <div id="user_data">
+                    <img src="assets/Mask Group.png" alt="User profile picture" id="">
+                    <div id="user_info">
+                        <h1>Mika Matikainen</h1>
+                        <p><time datetime="2020-04-15">Apr 15, 2020</time> · 4 min read</p>
+                    </div>
+                </div>
+                <div id="share">
+                    <button><ion-icon name="logo-facebook"></ion-icon></button>
+                    <button><ion-icon name="logo-twitter"></ion-icon></button>
+                    <button><ion-icon name="logo-whatsapp"></ion-icon></button>
+                </div>
+            </div>
+            <div class="text_area">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas
+                    efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean
+                    pharetra quis lacus at viverra.
+                </p>
+                <p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam
+                    quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus.
+                </p>
+                <h1>Next on the pipeline</h1>
+                <p>
+                    Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget
+                    ligula suscipit finibus. Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad
+                    litora torquent per conubia nostra, per inceptos himenaeos.
+                </p>
+                <p>
+                    Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et
+                    fringilla.
+                </p>
+            </div>
+        </article>
+        <figure>
+            <img src="assets/Rectangle 8.jpg" id="post_img" alt="">
+            <figcaption>
+                Image caption centered this way and I'll make this a bit longer to indicate the amount of
+                line-height.
+            </figcaption>
+        </figure>
+        <article>
+            <div class="text_area">
+                <p>
+                    Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia
+                    nostra, per inceptos himenaeos. Aliquam quis posuere ligula.
+                </p>
+                <p>
+                    In eu dui molestie, molestie lectus eu, semper lectus. Proin at justo lacinia, auctor nisl et,
+                    consequat
+                    ante. Donec sit amet nisi arcu. Morbi efficitur auctor metus, id mollis lorem pellentesque id.
+                    Nullam
+                    posuere maximus dui et fringilla. Nulla non volutpat leo.
+                    A list look like this:
+                </p>
+                <ul>
+                    <li>First item in the list</li>
+                    <li>Second item in the list lorem ipsum dolor sit amet nunc felis dolor lorem ipsum sit amet</li>
+                    <li>Third item in the list</li>
+                </ul>
+                <p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam
+                    quis posuere ligula.
+                </p>
+                <p>
+                    Thanks for reading,
+                    Mika
+                </p>
+            </div>
+            <div id="share_on">
+                <button><ion-icon name="logo-facebook"></ion-icon>Share on Facebook</button>
+                <button><ion-icon name="logo-twitter"></ion-icon>Share on Twitter</button>
+            </div>
+            <div id="tags">
+                <p>Tags:<span>product design, culture</span></p>
+            </div>
+            <div id="author_info">
+                <img src="assets/Mask Group.png" alt="">
+                <p>
+                    <span>Mika Matikainen</span> is a Design Founder & Advisor, Berlin School of Creative Leadership
+                    Executive MBA
+                    participant, Zippie advisor, Wolt co-founder, and Nordic Rose stakeholder.
+                </p>
+            </div>
+        </article>
+
+        <section id="comments">
+            <div>
+                <form action="" id="comments_form">
+                    <fieldset>
+                        <legend>Leave a reply</legend>
+                        <p>
+                            <label for="username">Username:</label>
+                            <input type="text" name="" placeholder="Username" id="username" required>
+                        </p>
+                        <p>
+                            <label for="commment">Comment:</label>
+                            <input type="text" name="" placeholder="Comment" id="comment" required>
+                        </p>
+                        <button type="submit">Post comment</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div>
+                <h1>Marcelo</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam id adipisci consequuntur ea, at
+                    mollitia voluptate soluta labore provident error quae eaque dolor fuga? Beatae atque aperiam fugit
+                    incidunt et?</p>
+            </div>
+            <div>
+                <h1>Bruno</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, beatae. Provident corporis numquam
+                    eum saepe quae tempora vitae asperiores reiciendis mollitia quos, commodi magnam veritatis
+                    aspernatur velit ducimus nisi omnis!</p>
+            </div>
+            <div>
+                <h1>Julio</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat natus saepe enim ex ad ut, vero
+                    nobis repudiandae harum deleniti perspiciatis reprehenderit explicabo deserunt? Corrupti reiciendis
+                    rerum ex quibusdam. Magni!</p>
+            </div>
+        </section>
+
+        <div id="partition">
+            <img src="assets/Group 10.jpg" alt="">
+        </div>
+
+        <section id="next_articles">
+            <h1>What to read next</h1>
+            <div id="articles">
+                <article>
+                    <a href="">
+                        <img src="assets/Rectangle 4.jpg" alt="">
+                        <p>Connecting artificial intelligence with digital product design</p>
+                    </a>
+                </article>
+                <article>
+                    <a href="">
+                        <img src="assets/Rectangle 4.jpg" alt="">
+                        <p>Connecting artificial intelligence with digital product design</p>
+                    </a>
+                </article>
+                <article>
+                    <a href="">
+                        <img src="assets/Rectangle 4.jpg" alt="">
+                        <p>Connecting artificial intelligence with digital product design</p>
+                    </a>
+                </article>
+                <article>
+                    <a href="">
+                        <img src="assets/Rectangle 4.jpg" alt="">
+                        <p>Connecting artificial intelligence with digital product design</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <div id="sign_up">
+            <div id="sign_up_text">
+                <h1>Sign up for the newsletter</h1>
+                <p>If you want relevant updates occasionally, sign up for the private newsletter. Your email is never
+                    shared. </p>
+            </div>
+            <form>
+                <input type="text" name="" placeholder="Enter your email" id="">
+                <button>Sign up</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div id="footer_text">
+            <h1>Nordic Rose</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In
+                hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus.
+            </p>
+        </div>
+        <div id="footer_links">
+            <a href="https://twitter.com/">Twitter</a>
+            <a href="https://linkedin.com/in/gerdanyjr">LinkedIn</a>
+            <a href="#">RSS</a>
+        </div>
+        <p>
+            &copy; 2012&ndash;2020 Nordic Rose Co. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>
