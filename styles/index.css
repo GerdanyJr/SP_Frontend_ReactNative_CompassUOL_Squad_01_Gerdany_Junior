@@ -32,8 +32,8 @@ nav>ul {
     display: flex;
 }
 
-#nav_bar>ul li img {
-    height: 0.8em;
+#nav_bar>ul li a {
+    font-size: 1.3em;
 }
 /* Main styles */
 
