@@ -7,9 +7,11 @@ const returnButton = document.querySelector('#return')! as HTMLButtonElement;
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const titleInput = document.querySelector("#post_title")! as HTMLInputElement;
+    const tagsInput = document.querySelector("#post_tags")! as HTMLInputElement;
     const contentInput = document.querySelector("#post_content")! as HTMLTextAreaElement;
 
     const title = titleInput.value;
+    const tags = tagsInput.value.split(',');
     const content = contentInput.value;
 
     const response = await createPost({ title: title, body: content });
@@ -23,7 +25,7 @@ form.addEventListener('submit', async (event) => {
         imgUrl: img.message,
         isDeleted: false,
         comments: comments.comments,
-        tags: []
+        tags: tags
     }
     posts.push(newPost);
     sessionStorage.setItem('posts', JSON.stringify(posts));

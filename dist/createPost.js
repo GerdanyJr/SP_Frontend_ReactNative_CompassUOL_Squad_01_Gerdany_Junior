@@ -14,8 +14,10 @@ const returnButton = document.querySelector('#return');
 form.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 0, function* () {
     event.preventDefault();
     const titleInput = document.querySelector("#post_title");
+    const tagsInput = document.querySelector("#post_tags");
     const contentInput = document.querySelector("#post_content");
     const title = titleInput.value;
+    const tags = tagsInput.value.split(',');
     const content = contentInput.value;
     const response = yield createPost({ title: title, body: content });
     const img = yield genericFetch('https://dog.ceo/api/breeds/image/random');
@@ -28,7 +30,7 @@ form.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 0, fun
         imgUrl: img.message,
         isDeleted: false,
         comments: comments.comments,
-        tags: []
+        tags: tags
     };
     posts.push(newPost);
     sessionStorage.setItem('posts', JSON.stringify(posts));
