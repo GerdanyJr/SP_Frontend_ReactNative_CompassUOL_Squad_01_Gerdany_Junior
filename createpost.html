@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="./dist/index.js" defer></script>
-    <link rel="stylesheet" href="styles/index.css">
-    <title>Compass Blog</title>
+    <link rel="stylesheet" href="styles/createpost.css">
+    <script type="module" src="dist/createPost.js" defer></script>
+    <title>Create Post</title>
 </head>
 
 <body>
@@ -14,31 +14,33 @@
         <a href="index.html"><img src="assets/svg/Logo.svg" alt="Logo do site"></a>
         <nav id="nav_bar">
             <ul>
-                <li class="active"><a href="index.html">Blog</a></li>
-                <li><a href="createpost.html">Create Post</a></li>
+                <li><a href="index.html">Blog</a></li>
+                <li class="active"><a href="">Create Post</a></li>
                 <li><a href="">Links</a></li>
                 <li><a href="">Projects</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <article id="main_post">
-            <a href="mainpost.html">
-                <img src="assets/image 2.jpg" id="post_img" alt="">
-                <div id="main_text">
-                    <h1>
-                        A few words about this blog platform,
-                        Ghost, and how this site was made
-                    </h1>
-                    <p>Why Ghost (& Figma) instead of Medium, WordPress or other options?</p>
-                </div>
-            </a>
-        </article>
-        <section>
-            <h1>All articles</h1>
-            <div id="articles_section"></div>
-        </section>
-    </main>
+
+    <section>
+        <h1>Create a New Post</h1>
+        <form id="post_form">
+            <p>
+                <label for="post_title">Post Title<span>*</span></label>
+                <input type="text" id="post_title" placeholder="Title" maxlength="40" required>
+            </p>
+            <p>
+                <label for="post_content">Post Content<span>*</span></label>
+                <textarea id="post_content" rows="6" required></textarea>
+            </p>
+
+            <div id="buttons">
+                <button type="submit">Create Post</button>
+                <button type="button" id="return">Return</button>
+            </div>
+        </form>
+    </section>
+
     <footer>
         <div id="footer_text">
             <h1>Nordic Rose</h1>

@@ -1,0 +1,167 @@
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    max-width: 100%;
+    color: inherit;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* post form styles */
+
+section {
+    width: 50%;
+    margin: 3em auto;
+    display: flex;
+    flex-direction: column;
+}
+
+section h1 {
+    font-size: 2em;
+}
+
+#post_form label {
+    display: block;
+}
+
+#post_form input,
+#post_form textarea {
+    padding: 5px;
+    width: 100%;
+}
+
+#post_form span {
+    color: red;
+}
+
+#post_form p {
+    margin: 1em 0;
+}
+
+#post_form button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #428BCA;
+    color: #ffff;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: all 0.25s ease-in-out;
+    width: 20%;
+}
+
+#post_form button:hover {
+    background-color: #155799;
+    border-color: #155799;
+    color: #F1F2F2;
+}
+
+#post_form button:active {
+    padding: 0.4em;
+    transition: padding 0.1s ease-in-out, transform 0.1s ease-in-out;
+    transform: scale(0.95);
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.0256);
+}
+
+header > a img {
+    height: 2em;
+}
+
+nav>ul {
+    list-style: none;
+    gap: 1em;
+    display: flex;
+}
+
+#nav_bar>ul li a {
+    font-size: 1.3em;
+}
+
+#buttons {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+}
+footer {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+footer > p {
+    width: 15%;
+}
+
+#footer_text {
+    width: 30%;
+}
+
+#footer_text h1 {
+    padding: 0.5em;
+}
+
+#footer_links {
+    display: flex;
+    gap: 2em;
+    margin: 2em 0;
+}
+
+#footer_links > a {
+    border-bottom: 1px solid white;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    section {
+        width: 90%;
+    }
+    #buttons {
+        flex-direction: column;
+    }
+    #buttons button {
+        width: 100%;
+    }
+    #main_text>h1 {
+        padding: 0 0.5em;
+    }
+
+    #main_text>p {
+        width: 80%;
+    }
+
+    #nav_bar {
+        display: none;
+    }
+    #footer_text {
+        width: 40%;
+    }
+    footer > p {
+        width: 30%;
+    }    
+}
+
+/* Util classes */
+
+.active {
+    border-bottom: 2px solid rgba(0, 0, 0);
+    margin-bottom: -2.6em;
+}
