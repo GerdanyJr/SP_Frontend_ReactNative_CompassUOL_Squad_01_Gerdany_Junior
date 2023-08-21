@@ -26,7 +26,8 @@ function loadData() {
                     imgUrl: imgsData[i],
                     tags: postsData[i].tags,
                     comments: [],
-                    isDeleted: false
+                    isDeleted: false,
+                    createdPost: false
                 });
             }
             return combinedData;

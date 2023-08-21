@@ -29,6 +29,7 @@ form.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 0, fun
         body: response.body,
         imgUrl: img.message,
         isDeleted: false,
+        createdPost: true,
         comments: comments.comments,
         tags: tags
     };

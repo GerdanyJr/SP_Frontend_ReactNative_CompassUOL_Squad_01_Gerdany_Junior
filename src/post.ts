@@ -32,21 +32,29 @@ commentFormContainer.addEventListener('submit', (event) => {
 
 
 async function postComment(comment: Comment) {
-    const response = await fetch('https://dummyjson.com/comments/add', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+    let newComment: Comment;
+    if (post.createdPost) {
+        newComment = {
             body: comment.body,
-            postId: post.id,
-            userId: post.userId,
+            user: { username: comment.user.username }
+        };
+    } else {
+        const response = await fetch('https://dummyjson.com/comments/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                body: comment.body,
+                postId: post.id,
+                userId: post.userId,
+            })
         })
-    })
-    const commentJson = await response.json();
-    const newComment: Comment = {
-        body: commentJson.body,
-        user: { username: comment.user.username }
+        const commentJson = await response.json();
+        newComment = {
+            body: commentJson.body,
+            user: { username: commentJson.user.username }
+        };
     }
-    console.log(post.comments);
+
     post.comments.push(newComment);
     updatePostInArrayAndStorage(post);
     createComment(newComment, commentsContainer);
@@ -83,7 +91,6 @@ async function renderSinglePost(postId: string, userId: number) {
         post.comments = commentsJson.comments.map((comment: Comment) => { return { body: comment.body, user: { username: comment.user.username } } });
         commentsJson.comments.map((comment: any) => createComment({ body: comment.body, user: { username: comment.user.username } }, commentsContainer));
     } else {
-        console.log(post);
         post.comments.map(((comment: any) => createComment({ body: comment.body, user: { username: comment.user.username } }, commentsContainer)));
     }
     postBody.innerHTML = `

@@ -24,6 +24,7 @@ form.addEventListener('submit', async (event) => {
         body: response.body,
         imgUrl: img.message,
         isDeleted: false,
+        createdPost: true,
         comments: comments.comments,
         tags: tags
     }

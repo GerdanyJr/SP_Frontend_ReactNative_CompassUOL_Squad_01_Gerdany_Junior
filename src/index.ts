@@ -10,7 +10,8 @@ export interface Post {
     imgUrl: string,
     tags: string[],
     comments: Comment[],
-    isDeleted: boolean
+    isDeleted: boolean,
+    createdPost: boolean
 }
 
 export interface Comment {
@@ -33,7 +34,8 @@ async function loadData(): Promise<any> {
                     imgUrl: imgsData[i],
                     tags: postsData[i].tags,
                     comments: [],
-                    isDeleted: false
+                    isDeleted: false,
+                    createdPost: false
                 })
             }
             return combinedData;

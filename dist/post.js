@@ -37,21 +37,29 @@ commentFormContainer.addEventListener('submit', (event) => {
 });
 function postComment(comment) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch('https://dummyjson.com/comments/add', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
+        let newComment;
+        if (post.createdPost) {
+            newComment = {
                 body: comment.body,
-                postId: post.id,
-                userId: post.userId,
-            })
-        });
-        const commentJson = yield response.json();
-        const newComment = {
-            body: commentJson.body,
-            user: { username: comment.user.username }
-        };
-        console.log(post.comments);
+                user: { username: comment.user.username }
+            };
+        }
+        else {
+            const response = yield fetch('https://dummyjson.com/comments/add', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    body: comment.body,
+                    postId: post.id,
+                    userId: post.userId,
+                })
+            });
+            const commentJson = yield response.json();
+            newComment = {
+                body: commentJson.body,
+                user: { username: commentJson.user.username }
+            };
+        }
         post.comments.push(newComment);
         updatePostInArrayAndStorage(post);
         createComment(newComment, commentsContainer);
@@ -86,7 +94,6 @@ function renderSinglePost(postId, userId) {
             commentsJson.comments.map((comment) => createComment({ body: comment.body, user: { username: comment.user.username } }, commentsContainer));
         }
         else {
-            console.log(post);
             post.comments.map(((comment) => createComment({ body: comment.body, user: { username: comment.user.username } }, commentsContainer)));
         }
         postBody.innerHTML = `
