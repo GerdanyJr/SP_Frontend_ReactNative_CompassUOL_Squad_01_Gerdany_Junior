@@ -36,6 +36,13 @@ nav>ul {
     font-size: 1.3em;
 }
 
+header button {
+    display: none;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
 /* Post header styles */
 
 #post_header {
@@ -390,6 +397,13 @@ footer>p {
 }
 
 @media screen and (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+    header button {
+        display: block;
+        font-size: 3em;
+    }
     #comments {
         width: 90%;
     }

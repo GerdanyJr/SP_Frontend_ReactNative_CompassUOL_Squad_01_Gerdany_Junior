@@ -35,6 +35,13 @@ nav>ul {
 #nav_bar>ul li a {
     font-size: 1.3em;
 }
+
+header button {
+    display: none;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
 /* Main styles */
 
 main {
@@ -140,6 +147,10 @@ footer > p {
 
 /* Media queries */
 @media screen and (max-width: 768px) {
+    header button {
+        display: block;
+        font-size: 3em;
+    }
     #main_text>h1 {
         padding: 0 0.5em;
     }

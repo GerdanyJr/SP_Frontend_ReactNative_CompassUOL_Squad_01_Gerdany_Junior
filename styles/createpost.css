@@ -92,6 +92,12 @@ nav>ul {
     font-size: 1.3em;
 }
 
+header button {
+    display: none;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
 #buttons {
     display: flex;
     width: 100%;
@@ -131,6 +137,13 @@ footer > p {
 
 /* Media queries */
 @media screen and (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+    header button {
+        display: block;
+        font-size: 3em;
+    }
     section {
         width: 90%;
     }
