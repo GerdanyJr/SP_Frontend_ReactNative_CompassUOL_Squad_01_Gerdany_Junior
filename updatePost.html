@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/createpost.css">
+    <script type="module" src="dist/updatePost.js" defer></script>
+    <title>Update Post</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="assets/svg/Logo.svg" alt="Logo do site"></a>
+        <nav id="nav_bar">
+            <ul>
+                <li><a href="index.html">Blog</a></li>
+                <li class="active"><a href="">Create Post</a></li>
+                <li><a href="">Links</a></li>
+                <li><a href="">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Update a Post</h1>
+        <form id="post_form">
+            <p>
+                <label for="post_title">Title</label>
+                <input type="text" id="post_title" placeholder="Title" maxlength="40">
+            </p>
+            <p>
+                <label for="post_tags">Tags</label>
+                <input type="text" id="post_tags" placeholder="tag1, tag2..." maxlength="40">
+            </p>
+            <p>
+                <label for="post_content">Content</label>
+                <textarea id="post_content" rows="6"></textarea>
+            </p>
+
+            <div id="buttons">
+                <button type="submit" id="update_button">Update Post</button>
+                <button type="button" id="return">Return</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <div id="footer_text">
+            <h1>Nordic Rose</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In
+                hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus.
+            </p>
+        </div>
+        <div id="footer_links">
+            <a href="https://twitter.com/">Twitter</a>
+            <a href="https://linkedin.com/in/gerdanyjr">LinkedIn</a>
+            <a href="#">RSS</a>
+        </div>
+        <p>
+            &copy; 2012&ndash;2020 Nordic Rose Co. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>

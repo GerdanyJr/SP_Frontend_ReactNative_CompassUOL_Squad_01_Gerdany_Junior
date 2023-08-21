@@ -15,6 +15,8 @@ const nextPostsContainer = document.querySelector('#articles');
 const commentsContainer = document.querySelector('#comments');
 const commentFormContainer = document.querySelector('#comments_form');
 const deleteButton = document.querySelector("#delete_button");
+const updateButton = document.querySelector("#update_button");
+updateButton.addEventListener("click", () => window.location.href = "updatePost.html");
 deleteButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield fetch(`https://dummyjson.com/posts/${post.id}`, {
         method: 'DELETE',

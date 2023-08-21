@@ -7,7 +7,9 @@ const nextPostsContainer = document.querySelector('#articles')! as HTMLDivElemen
 const commentsContainer = document.querySelector('#comments')! as HTMLDivElement;
 const commentFormContainer = document.querySelector('#comments_form')! as HTMLFormElement;
 const deleteButton = document.querySelector("#delete_button")! as HTMLButtonElement;
+const updateButton = document.querySelector("#update_button")! as HTMLButtonElement;
 
+updateButton.addEventListener("click", () => window.location.href = "updatePost.html");
 deleteButton.addEventListener("click", async () => {
     const response = await fetch(`https://dummyjson.com/posts/${post.id}`, {
         method: 'DELETE',
@@ -126,7 +128,6 @@ function renderNextPosts(nextPosts: Post[], nextPostsContainer: HTMLDivElement) 
         nextPostsContainer && nextPostsContainer.appendChild(article);
     })
 }
-
 function updatePostInArrayAndStorage(updatedPost: Post) {
     const index = posts.findIndex(post => post.id === updatedPost.id);
     posts[index] = updatedPost;
