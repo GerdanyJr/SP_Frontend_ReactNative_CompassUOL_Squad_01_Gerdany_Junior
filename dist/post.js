@@ -18,10 +18,16 @@ const deleteButton = document.querySelector("#delete_button");
 const updateButton = document.querySelector("#update_button");
 updateButton.addEventListener("click", () => window.location.href = "updatePost.html");
 deleteButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
-    const response = yield fetch(`https://dummyjson.com/posts/${post.id}`, {
-        method: 'DELETE',
-    });
-    const deletedPost = yield response.json();
+    let deletedPost;
+    if (post.createdPost) {
+        deletedPost = Object.assign(Object.assign({}, post), { isDeleted: true });
+    }
+    else {
+        const response = yield fetch(`https://dummyjson.com/posts/${post.id}`, {
+            method: 'DELETE',
+        });
+        deletedPost = yield response.json();
+    }
     updatePostInArrayAndStorage(deletedPost);
     window.location.href = "index.html";
 }));

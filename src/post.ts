@@ -11,10 +11,18 @@ const updateButton = document.querySelector("#update_button")! as HTMLButtonElem
 
 updateButton.addEventListener("click", () => window.location.href = "updatePost.html");
 deleteButton.addEventListener("click", async () => {
-    const response = await fetch(`https://dummyjson.com/posts/${post.id}`, {
-        method: 'DELETE',
-    });
-    const deletedPost = await response.json();
+    let deletedPost: Post;
+    if (post.createdPost) {
+        deletedPost = {
+            ...post,
+            isDeleted: true
+        }
+    } else {
+        const response = await fetch(`https://dummyjson.com/posts/${post.id}`, {
+            method: 'DELETE',
+        });
+        deletedPost = await response.json();
+    }
     updatePostInArrayAndStorage(deletedPost);
     window.location.href = "index.html";
 })
